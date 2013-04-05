@@ -1,0 +1,35 @@
+apply plugin: 'java'
+
+/* ide */
+apply {
+    plugin 'idea'
+    plugin 'eclipse'
+}
+
+group = 'tddbc'
+project.ext {
+    artifactId = 'tddbc'
+}
+version = '1.0-SNAPSHOT'
+
+tasks.withType(Compile) {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+}
+
+task quickStart << {
+    sourceSets*.allSource*.srcDirs.flatten().each { it.mkdirs() }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = 1.5
+}
