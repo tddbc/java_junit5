@@ -1,12 +1,29 @@
+##################
+# common
+*.class
+*.jar
+
+##################
 # gradle
 
 .gradle/
 build/
 
-# IDE
+##################
+# maven
+
+target/
+
+##################
+# IntelliJ IDEA
 
 out/
 .idea/
 *.iml
 *.ipr
 *.iws
+
+##################
+# Eclipse
+.classpath
+.project
