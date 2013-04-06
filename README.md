@@ -7,9 +7,12 @@ TDDBC for Java with JUnit
 
 ### インストール(wrapperを使わない場合)
 ```bash
-# Mac, Unix
+# Mac
 brew install gradle
 または、
+gvm install gradle
+
+# Unix
 gvm install gradle
 ```
 gvmについては、以下のURLを参考にしてインストールしてください
