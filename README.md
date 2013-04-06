@@ -6,39 +6,39 @@ TDDBC for Java with JUnit
 ## gradleを使う場合
 
 ### インストール(wrapperを使わない場合)
-#### Mac, Unix
 ```bash
+# Mac, Unix
 brew install gradle
 または、
 gvm install gradle
 ```
 gvmについては、以下のURLを参考にしてインストールしてください
+
 http://gvmtool.net/
 
 #### Windows
 以下のURLを参考にしてインストールしてください。
+
 http://gradle.monochromeroad.com/docs/userguide/installation.html
 
 ### gradle wrapperの準備
-#### Mac, Unix
 ```bash
+# Mac, Unix
 chmod +x gradlew
 ./gradlew -v
-```
 
-#### Windows
-```bash
+# Windows
 gradlew.bat -v
 ```
-wrapperを利用する際は、以下のgradleコマンドを**gradlew**に置き換えて利用してください。
+
+wrapperを利用する際は、以下のgradleコマンドを **gradlew** に置き換えて利用してください。
 
 ### プロジェクトの変換
-#### for. IntelliJ IDEA
 ```bash
+# for. IntelliJ IDEA
 gradle idea
-```
-#### for. Eclipse
-```bash
+
+# for. Eclipse
 gradle eclipse
 ```
 
@@ -47,23 +47,24 @@ gradle eclipse
 gradle test
 ```
 
+
 ## mavenを使う場合
 ### インストール
-#### Mac
 ```bash
+# Mac
 brew install maven
 ```
 #### Windows, Unix
 以下のURLを参考にしてインストールしてください。
+
 http://maven.apache.org/download.cgi#Installation
 
 ### プロジェクトの変換
-#### for. IntelliJ IDEA
 ```bash
+# for. IntelliJ IDEA
 mvn idea:idea
-```
-#### for. Eclipse
-```bash
+
+# for. Eclipse
 mvn eclipse:eclipse
 ```
 
