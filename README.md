@@ -34,7 +34,7 @@ chmod +x gradlew
 gradlew.bat -v
 ```
 
-wrapperを利用する際は、以下のgradleコマンドを **gradlew** に置き換えて利用してください。
+wrapperを利用する際は、以下のgradleコマンドを **./gradlew** または **gradlew.bat** に置き換えて利用してください。
 
 ### プロジェクトの変換
 ```bash
