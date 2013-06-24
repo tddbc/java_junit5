@@ -75,3 +75,6 @@ mvn eclipse:eclipse
 ```bash
 mvn test
 ```
+
+## ライセンス
+Apache License, Version 2.0です (詳しくはプロジェクト直下の LICENSE-2.0.txt をご覧ください)
