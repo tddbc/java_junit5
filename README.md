@@ -76,5 +76,9 @@ mvn eclipse:eclipse
 mvn test
 ```
 
+## その他
+
+動作環境、IDE等については[Wiki](https://github.com/tddbc/java_junit/wiki)を参照してください。
+
 ## ライセンス
 Apache License, Version 2.0です (詳しくはプロジェクト直下の LICENSE-2.0.txt をご覧ください)
