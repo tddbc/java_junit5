@@ -5,15 +5,16 @@ TDDBC for Java with JUnit
 
 ## gradleを使う場合
 
-### インストール(wrapperを使わない場合)
+### gradleのインストール(wrapperを使わない場合)
+
 ```bash
 # Mac
-brew install gradle
+$ brew install gradle
 または、
-gvm install gradle
+$ gvm install gradle
 
 # Unix
-gvm install gradle
+$ gvm install gradle
 ```
 gvmについては、以下のURLを参考にしてインストールしてください
 
@@ -25,31 +26,45 @@ http://gvmtool.net/
 http://gradle.monochromeroad.com/docs/userguide/installation.html
 
 ### gradle wrapperの準備
+
+gradleをインストールしない場合は、このプロジェクトをcloneしてから以下のコマンドを実行してください。
+
 ```bash
 # Mac, Unix
-chmod +x gradlew
-./gradlew -v
+$ chmod +x gradlew
+$ ./gradlew -v
 
 # Windows
-gradlew.bat -v
+$ gradlew.bat -v
 ```
 
 wrapperを利用する際は、以下のgradleコマンドを **./gradlew** または **gradlew.bat** に置き換えて利用してください。
 
 ### プロジェクトの変換
+
 ```bash
 # for. IntelliJ IDEA
-gradle idea
+$ gradle idea
 
 # for. Eclipse
-gradle eclipse
+$ gradle eclipse
 ```
 
 ### テストの実行
+
 ```bash
-gradle test
+$ gradle test
 ```
 
+### gradleによるJava Projectの作成(gradle 1.9以降)
+
+gradleがインストールされている環境では、以下のコマンドを実行することで、Javaのプロジェクトを作成することが出来ます。
+
+```bash
+$ mkdir tddbc-java
+$ cd tddbc-java
+$ gradle init --type java-library
+```
 
 ## mavenを使う場合
 ### インストール
