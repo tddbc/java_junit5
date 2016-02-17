@@ -1,20 +1,21 @@
 package tddbc;
 
-import org.junit.Test;
+import org.junit.gen5.api.Test;
+import org.junit.gen5.api.DisplayName;
+import static org.junit.gen5.api.Assertions.*;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 
 public class SampleTest {
 
     @Test
+    @DisplayName("should return Hello TDD Boot Camp")
     public void _should_return_Hello_TDD_BootCamp() throws Exception {
         // Setup
         Sample sut = new Sample();
         // Exercise
         String actual = sut.say();
         // Verify
-        assertThat(actual, is("Hello TDD BootCamp!"));
+        assertEquals("Hello TDD BootCamp!", actual);
     }
 
 }

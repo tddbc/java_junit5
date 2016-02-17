@@ -1,5 +1,4 @@
-TDDBC for Java with JUnit
-====================================
+# TDDBC for Java with JUnit5
 
 これは、TDDBCのJava向けJUnitプロジェクトです。
 
@@ -53,7 +52,7 @@ $ gradle eclipse
 ### テストの実行
 
 ```bash
-$ gradle test
+$ gradle -q junit5Test
 ```
 
 ### gradleによるJava Projectの作成(gradle 1.9以降)
@@ -88,7 +87,7 @@ mvn eclipse:eclipse
 
 ### テストの実行
 ```bash
-mvn test
+mvn -Dtest=* test
 ```
 
 ## その他
