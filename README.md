@@ -87,7 +87,7 @@ mvn eclipse:eclipse
 
 ### テストの実行
 ```bash
-mvn test
+mvn -Dtest=* test
 ```
 
 ## その他
