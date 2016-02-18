@@ -10,14 +10,14 @@
 # Mac
 $ brew install gradle
 または、
-$ gvm install gradle
+$ sdk install gradle
 
 # Unix
-$ gvm install gradle
+$ sdk install gradle
 ```
-gvmについては、以下のURLを参考にしてインストールしてください
+sdkについては、以下のURLを参考にしてインストールしてください
 
-http://gvmtool.net/
+http://sdkman.io/
 
 #### Windows
 以下のURLを参考にしてインストールしてください。
