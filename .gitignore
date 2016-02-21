@@ -27,3 +27,4 @@ out/
 # Eclipse
 .classpath
 .project
+.settings/
