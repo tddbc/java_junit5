@@ -1,9 +1,8 @@
 package tddbc;
 
-import org.junit.gen5.api.Test;
-import org.junit.gen5.api.DisplayName;
-import static org.junit.gen5.api.Assertions.*;
-
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SampleTest {
 
