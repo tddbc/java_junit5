@@ -52,7 +52,7 @@ $ gradle eclipse
 ### テストの実行
 
 ```bash
-$ gradle -q junit5Test
+$ gradle junitPlatformTest
 ```
 
 ### gradleによるJava Projectの作成(gradle 1.9以降)
@@ -87,7 +87,7 @@ mvn eclipse:eclipse
 
 ### テストの実行
 ```bash
-mvn -Dtest=* test
+mvn test
 ```
 
 ## その他

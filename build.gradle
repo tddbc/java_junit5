@@ -1,5 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'org.junit.gen5.gradle'
+apply plugin: 'org.junit.platform.gradle.plugin'
 
 /* ide */
 apply {
@@ -13,16 +13,19 @@ project.ext {
 }
 version = '1.0-SNAPSHOT'
 
+ext.junitJupiterVersion  = '5.0.0-M1'
+ext.log4JVersion = '2.5'
+
 sourceCompatibility = targetCompatibility = 1.8
 
 tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
 
 buildscript {
     repositories {
-        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        mavenCentral()
     }
     dependencies {
-        classpath 'org.junit:junit-gradle:5.0.0-SNAPSHOT'
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M1'
     }
 }
 
@@ -31,11 +34,21 @@ repositories {
 }
 
 dependencies {
-    testCompile 'org.junit:junit5-api:5.0.0-ALPHA'
+    testCompile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+    testRuntime "org.apache.logging.log4j:log4j-core:${log4JVersion}"
+    testRuntime "org.apache.logging.log4j:log4j-jul:${log4JVersion}"
 }
 
-junit5 {
-    version '5.0.0-ALPHA'
+junitPlatform {
+    logManager 'org.apache.logging.log4j.jul.LogManager'
+    engines {
+        include 'junit-jupiter'
+    }
+    tags {
+      exclude 'slow'
+    }
+    includeClassNamePattern '.*Test'
 }
 
 wrapper {
