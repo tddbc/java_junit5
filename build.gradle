@@ -13,7 +13,7 @@ project.ext {
 }
 version = '1.0-SNAPSHOT'
 
-ext.junitJupiterVersion  = '5.0.0-M1'
+ext.junitJupiterVersion  = '5.0.0-RC3'
 ext.log4JVersion = '2.5'
 
 sourceCompatibility = targetCompatibility = 1.8
@@ -25,7 +25,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M1'
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-RC3'
     }
 }
 
@@ -42,13 +42,15 @@ dependencies {
 
 junitPlatform {
     logManager 'org.apache.logging.log4j.jul.LogManager'
-    engines {
-        include 'junit-jupiter'
+    filters {
+        engines {
+            include 'junit-jupiter'
+        }
+        tags {
+          exclude 'slow'
+        }
+        includeClassNamePattern '.*Test'
     }
-    tags {
-      exclude 'slow'
-    }
-    includeClassNamePattern '.*Test'
 }
 
 wrapper {
