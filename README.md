@@ -83,6 +83,7 @@ mvn idea:idea
 
 # for. Eclipse
 mvn eclipse:eclipse
+mvn eclipse:configure-workspace -Declipse.workspace=/path/to/eclipse/workspace
 ```
 
 ### テストの実行
