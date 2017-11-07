@@ -54,5 +54,5 @@ junitPlatform {
 }
 
 wrapper {
-    gradleVersion = "2.11"
+    gradleVersion = "4.3"
 }
