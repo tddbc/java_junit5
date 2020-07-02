@@ -16,7 +16,7 @@ version = '1.0-SNAPSHOT'
 ext.junitJupiterVersion  = '5.0.1'
 ext.log4JVersion = '2.5'
 
-sourceCompatibility = targetCompatibility = 1.8
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_11
 
 tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
 
@@ -55,5 +55,5 @@ junitPlatform {
 }
 
 wrapper {
-    gradleVersion = "4.3"
+    gradleVersion = "6.5"
 }

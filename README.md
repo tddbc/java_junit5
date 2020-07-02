@@ -91,6 +91,25 @@ mvn eclipse:configure-workspace -Declipse.workspace=/path/to/eclipse/workspace
 mvn test
 ```
 
+## Gitpodを使う場合
+[Gitpod](https://gitpod.io/)は無料で使えるブラウザ上で動作するエディタです（無料で使用できる時間には月毎に制限があるため、完全無料ではない）
+
+Javaがインストール済み環境で、VSCodeライクなエディタが使用することができます。また、他のユーザーを招待して同時編集も可能なため、ペアプロ用途にも便利です。
+
+以下のボタンからこのリポジトリの環境をGitpodで立ち上げて始めることが可能です。
+
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/tddbc/java_junit5)
+
+Gitpod上でgitの操作も可能ですが、上記のボタンから開始した場合はTDDBCのリポジトリがremoteに設定された状態になります。自分のリポジトリとしてForkしてから始める場合は、`https://gitpod.io/#{自分のリポジトリのurl}`のurlからGitpodを立ち上げてください。
+
+https://www.gitpod.io/docs/getting-started/
+
+### テストの実行
+1. `Ctrl + Shift + p`でコマンドパレットを呼び出す
+2. `Task: Run Test Task...`を実行
+
+`./gradlew junitPlatformTest`によるテストが実行されます
+
 ## その他
 
 動作環境、IDE等については[Wiki](https://github.com/tddbc/java_junit/wiki)を参照してください。
