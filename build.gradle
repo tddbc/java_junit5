@@ -1,10 +1,7 @@
-apply plugin: 'java'
-apply plugin: 'org.junit.platform.gradle.plugin'
-
-/* ide */
-apply {
-    plugin 'idea'
-    plugin 'eclipse'
+plugins {
+    id 'java'
+    id 'eclipse' // optional (to generate Eclipse project files)
+    id 'idea' // optional (to generate IntelliJ IDEA project files)
 }
 
 group = 'tddbc'
@@ -13,47 +10,28 @@ project.ext {
 }
 version = '1.0-SNAPSHOT'
 
-ext.junitJupiterVersion  = '5.0.1'
-ext.log4JVersion = '2.5'
+ext.junitJupiterVersion  = '5.7.1'
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_11
 
 tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
-    }
-}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
-    testCompile "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
-    testRuntime "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
-    testRuntime "org.apache.logging.log4j:log4j-core:${log4JVersion}"
-    testRuntime "org.apache.logging.log4j:log4j-jul:${log4JVersion}"
+    testImplementation(platform("org.junit:junit-bom:${junitJupiterVersion}"))
+    testImplementation('org.junit.jupiter:junit-jupiter')
 }
 
-junitPlatform {
-    logManager 'org.apache.logging.log4j.jul.LogManager'
-    filters {
-        engines {
-            include 'junit-jupiter'
-        }
-        tags {
-          exclude 'slow'
-        }
-        includeClassNamePattern '.*Test'
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
     }
 }
 
 wrapper {
-    gradleVersion = "6.5"
+    gradleVersion = "6.8.2"
 }
