@@ -10,9 +10,11 @@ project.ext {
 }
 version = '1.0-SNAPSHOT'
 
-ext.junitJupiterVersion  = '5.7.1'
+ext.junitJupiterVersion  = '5.12.2'
 
-sourceCompatibility = targetCompatibility = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = '23'
+}
 
 tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
 
@@ -23,6 +25,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:${junitJupiterVersion}"))
     testImplementation('org.junit.jupiter:junit-jupiter')
+    testRuntimeOnly('org.junit.platform:junit-platform-launcher')
 }
 
 test {
@@ -33,5 +36,5 @@ test {
 }
 
 wrapper {
-    gradleVersion = "6.8.2"
+    gradleVersion = "8.13"
 }
