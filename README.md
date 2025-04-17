@@ -4,6 +4,38 @@
 
 ## gradleを使う場合
 
+### gradle wrapperの準備
+
+gradleをインストールしない場合は、このプロジェクトをcloneしてから以下のコマンドを実行してください。
+
+```bash
+# Mac, Unix
+$ chmod +x gradlew
+$ ./gradlew -v
+
+# Windows
+$ gradlew.bat -v
+```
+
+gradleをインストールする際は、以下の **./gradlew** ( Windowsは **gradlew.bat** )コマンドを **gradle** に置き換えて利用してください。
+
+### プロジェクトの変換
+
+```bash
+# for. IntelliJ IDEA
+$ ./gradlew idea
+
+# for. Eclipse
+$ ./gradlew eclipse
+```
+
+### テストの実行
+
+```bash
+$ ./gradlew test
+```
+(gradlewを使う場合はここまで動けばOK)
+
 ### gradleのインストール(wrapperを使わない場合)
 
 ```bash
@@ -23,37 +55,6 @@ http://sdkman.io/
 以下のURLを参考にしてインストールしてください。
 
 http://gradle.monochromeroad.com/docs/userguide/installation.html
-
-### gradle wrapperの準備
-
-gradleをインストールしない場合は、このプロジェクトをcloneしてから以下のコマンドを実行してください。
-
-```bash
-# Mac, Unix
-$ chmod +x gradlew
-$ ./gradlew -v
-
-# Windows
-$ gradlew.bat -v
-```
-
-wrapperを利用する際は、以下のgradleコマンドを **./gradlew** または **gradlew.bat** に置き換えて利用してください。
-
-### プロジェクトの変換
-
-```bash
-# for. IntelliJ IDEA
-$ gradle idea
-
-# for. Eclipse
-$ gradle eclipse
-```
-
-### テストの実行
-
-```bash
-$ gradle junitPlatformTest
-```
 
 ### gradleによるJava Projectの作成(gradle 1.9以降)
 
@@ -108,7 +109,7 @@ https://www.gitpod.io/docs/getting-started/
 1. `Ctrl + Shift + p`でコマンドパレットを呼び出す
 2. `Task: Run Test Task...`を実行
 
-`./gradlew junitPlatformTest`によるテストが実行されます
+`./gradlew test`によるテストが実行されます
 
 ## その他
 
